@@ -78,21 +78,36 @@
             </select>
         </div>
 
-        <form action="/book" method="post">
-            <input type="hidden"
-              name="match" value="01">
-            <button type="submit">Book</button>  
-        </form>
+        <div class="booking-container">
+            <form action="/book" method="post">
+                <h2>Book Your Ticket</h2>
+                <p>Select your match and proceed to booking.</p>
+                <input type="hidden" name="match" value="01">
+                <button type="submit">Book</button>
+            </form>
+
+            <section class="booking-summary">
+                <h2>Booking Summary</h2>
+                <p><strong>Match:</strong> CSK vs MI</p>
+                <p><strong>Stand:</strong> General</p>
+                <p><strong>Tickets:</strong> 2</p>
+                <p><strong>Total:</strong> ₹2400</p>
+            </section>
+        </div>
         <form action="/confirm" method="post">
             <label>Match:</label>
-            <select name="match">...</select>
+            <select name="match">
+                <option>CSK vs MI</option>
+                <option>RR vs RCB</option>
+                <option>PBKS vs GT</option>
+            </select>
             <label>Stand Category:</label>
             <input type="radio" name="stand" value="general"> General
             <input type="radio" name="stand" value="premium"> Premium
             <input type="radio" name="stand" value="vip"> VIP
-            </select>
             <label>No. of Tickets:</label>
             <input type="number" min="1">
+
             <label>Name:</label>
             <input type="text" required>
             <label>Email:</label>

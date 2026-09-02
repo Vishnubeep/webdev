@@ -97,7 +97,7 @@ main button{
     margin:5px;
 }
 
-/* POPULAR TEAM */
+/* POPULAR TEAMS */
 body > h2{
     text-align:center;
     color:var(--primary);
@@ -171,7 +171,7 @@ td button{
     justify-content:center;
     align-items:center;
     gap:6px;
-    margin:20px auto;
+    margin:25px auto;
 }
 
 .filter label{
@@ -187,7 +187,68 @@ td button{
     cursor:pointer;
 }
 
-/* BOOK FORM */
+/* BOOKING SECTION - CSS GRID */
+.booking-container{
+    width:90%;
+    max-width:1000px;
+    margin:35px auto;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:25px;
+    align-items:start;
+}
+
+/* BOOKING CARD */
+.booking-container form{
+    width:100%;
+    margin:0;
+    padding:25px;
+    background:white;
+    border-radius:12px;
+    box-shadow:0 4px 15px rgba(0,0,0,.1);
+}
+
+.booking-container form h2{
+    color:var(--primary);
+    margin-bottom:10px;
+}
+
+.booking-container form p{
+    color:#555;
+    margin-bottom:20px;
+}
+
+.booking-container form button{
+    width:100%;
+    margin-top:10px;
+    padding:14px;
+    font-size:16px;
+}
+
+/* BOOKING SUMMARY */
+.booking-summary{
+    background:white;
+    padding:30px;
+    border-radius:12px;
+    box-shadow:0 4px 15px rgba(0,0,0,.1);
+}
+
+.booking-summary h2{
+    color:var(--primary);
+    margin-bottom:25px;
+    font-size:30px;
+}
+
+.booking-summary p{
+    margin:16px 0;
+    font-size:17px;
+}
+
+.booking-summary strong{
+    color:#111;
+}
+
+/* GENERAL FORM */
 form{
     width:90%;
     max-width:600px;
@@ -223,7 +284,6 @@ form select:focus{
     border-color:var(--accent);
 }
 
-/* RADIO BUTTONS */
 form input[type="radio"]{
     width:auto;
     margin:8px 5px 8px 0;
@@ -232,19 +292,6 @@ form input[type="radio"]{
 form button{
     width:100%;
     margin-top:20px;
-}
-
-/* FIRST BOOK FORM */
-form[action="/book"]{
-    max-width:375px;
-    padding:0;
-    background:none;
-    box-shadow:none;
-    margin:25px auto;
-}
-
-form[action="/book"] button{
-    margin-top:0;
 }
 
 /* FOOTER */
@@ -271,8 +318,8 @@ footer p{
         gap:25px;
     }
 
-    table{
-        width:95%;
+    .booking-container{
+        grid-template-columns:1fr;
     }
 }
 
@@ -325,32 +372,17 @@ footer p{
         font-size:13px;
     }
 
-    /* MOBILE TABLE - NO SIDE SCROLL */
+    /* TABLE SCROLL ON MOBILE */
     table{
         width:96%;
-        min-width:0;
-        margin:0 auto 15px;
-        table-layout:fixed;
-        font-size:10px;
+        min-width:650px;
     }
 
-    th{
-        padding:8px 2px;
-        font-size:10px;
+    body{
+        overflow-x:hidden;
     }
 
-    td{
-        padding:8px 2px;
-        font-size:10px;
-        word-break:break-word;
-    }
-
-    td button{
-        padding:6px 7px;
-        font-size:9px;
-    }
-
-    /* CENTER FILTER */
+    /* FILTER */
     .filter{
         width:100%;
         margin:20px auto;
@@ -366,6 +398,31 @@ footer p{
         font-size:12px;
     }
 
+    /* BOOKING GRID */
+    .booking-container{
+        width:94%;
+        grid-template-columns:1fr;
+        gap:20px;
+    }
+
+    .booking-container form{
+        width:100%;
+    }
+
+    .booking-summary{
+        width:100%;
+        padding:22px;
+    }
+
+    .booking-summary h2{
+        font-size:24px;
+    }
+
+    .booking-summary p{
+        font-size:15px;
+    }
+
+    /* GENERAL FORM */
     form{
         width:94%;
         padding:20px;
@@ -376,7 +433,7 @@ footer p{
     }
 }
 
-/* SMALL PHONES */
+/* SMALL MOBILE */
 @media(max-width:380px){
 
     nav ul{
@@ -397,18 +454,17 @@ footer p{
     }
 
     table{
-        width:98%;
-        font-size:9px;
+        min-width:650px;
     }
 
     th,
     td{
-        padding:6px 1px;
+        padding:7px 3px;
         font-size:9px;
     }
 
     td button{
-        padding:5px;
+        padding:5px 7px;
         font-size:8px;
     }
 
