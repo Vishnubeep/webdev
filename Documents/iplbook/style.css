@@ -1,0 +1,484 @@
+:root{
+    --primary:#0b1f5e;
+    --accent:#ff6b00;
+    --background:#f4f6f9;
+    --text:#222;
+    --light-blue:#eef4ff;
+    --gradient-start:#1e3a8a;
+    --gradient-end:#2563eb;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:var(--background);
+    color:var(--text);
+}
+
+/* HEADER */
+header{
+    background:var(--primary);
+    color:white;
+    padding:25px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    text-align:center;
+}
+
+header h1{font-size:32px}
+
+/* NAVIGATION */
+nav{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    padding:15px;
+    background:var(--primary);
+    z-index:1000;
+    box-shadow:0 3px 10px rgba(0,0,0,.2);
+}
+
+nav ul{
+    list-style:none;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:40px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+    transition:.3s;
+}
+
+nav a:hover{color:var(--accent)}
+
+/* HERO */
+main{
+    max-width:1100px;
+    margin:20px auto 30px;
+    padding:60px 20px;
+    text-align:center;
+    color:rgb(254, 251, 251);
+    background:linear-gradient(
+        135deg,
+        var(--gradient-start),
+        var(--gradient-end)
+    );
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,.2);
+}
+
+main h2{
+    font-size:34px;
+    margin-bottom:15px;
+}
+
+main p{
+    font-size:18px;
+    margin-bottom:20px;
+}
+
+/* BUTTONS */
+button{
+    background:var(--accent);
+    color:white;
+    border:0;
+    padding:12px 25px;
+    margin:8px;
+    border-radius:6px;
+    cursor:pointer;
+    font-weight:bold;
+    transition:.3s;
+}
+
+button:hover{
+    background:#e65100;
+    transform:translateY(-2px);
+}
+
+/* POPULAR TEAMS */
+body>h2{
+    text-align:center;
+    margin:35px 0 20px;
+    color:var(--primary);
+}
+
+body>ul{
+    width:500px;
+    max-width:90%;
+    margin:0 auto 55px;
+    padding:0;
+    list-style:none;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px;
+}
+
+body>ul li{
+    background:white;
+    padding:16px;
+    text-align:center;
+    border-radius:8px;
+    font-weight:bold;
+    box-shadow:0 3px 8px rgba(0,0,0,.1);
+    transition:.3s;
+}
+
+body>ul li:hover{
+    transform:translateY(-3px);
+    box-shadow:0 5px 12px rgba(0,0,0,.15);
+}
+
+/* TABLE */
+.table-container{
+    width:90%;
+    margin:0 auto 45px;
+    overflow-x:auto;
+}
+
+table{
+    width:100%;
+    min-width:700px;
+    border-collapse:collapse;
+    background:white;
+    box-shadow:0 4px 12px rgba(0,0,0,.15);
+    border-radius:8px;
+    overflow:hidden;
+}
+
+th{
+    background:var(--primary);
+    color:white;
+    padding:15px;
+}
+
+td{
+    padding:12px;
+    text-align:center;
+    border:1px solid #ddd;
+}
+
+tbody tr:hover{background:var(--light-blue)}
+
+/* FILTER */
+label[for="team"]{
+    display:block;
+    width:230px;
+    margin:35px auto 10px;
+    text-align:center;
+    font-weight:bold;
+    font-size:17px;
+    color:var(--primary);
+}
+
+#team{
+    display:block;
+    width:230px;
+    margin:10px auto 45px;
+    padding:13px 18px;
+    background:white;
+    color:var(--text);
+    border:2px solid var(--primary);
+    border-radius:7px;
+    font-size:15px;
+    cursor:pointer;
+    box-shadow:0 3px 8px rgba(0,0,0,.1);
+    transition:.3s;
+}
+
+#team:hover,
+#team:focus{
+    border-color:var(--accent);
+}
+
+#team:focus{
+    outline:0;
+    box-shadow:0 0 6px rgba(255,107,0,.4);
+}
+
+/* BOOKING */
+.booking-container{
+    max-width:1100px;
+    width:90%;
+    margin:30px auto;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:30px;
+}
+
+.booking-form,
+.booking-summary,
+form{
+    background:white;
+    border-radius:10px;
+    box-shadow:0 4px 12px rgba(0,0,0,.1);
+}
+
+.booking-form,
+.booking-summary{
+    padding:25px;
+}
+
+/* FORM */
+form{
+    max-width:600px;
+    margin:25px auto;
+    padding:25px;
+}
+
+form label{
+    display:block;
+    margin-top:10px;
+    font-weight:bold;
+    color:var(--primary);
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="number"],
+form select{
+    display:block;
+    width:100%;
+    padding:10px;
+    margin:8px 0 15px;
+    border:1px solid #ccc;
+    border-radius:5px;
+}
+
+form input:focus,
+form select:focus{
+    outline:0;
+    border-color:var(--accent);
+    box-shadow:0 0 5px rgba(255,107,0,.3);
+}
+
+form input[type="radio"]{
+    margin:10px 5px;
+    accent-color:var(--accent);
+}
+
+form button{
+    display:block;
+    margin:20px auto 0;
+    background:var(--primary);
+}
+
+form button:hover,
+.summary-details button:hover{
+    background:var(--gradient-end);
+}
+
+/* BOOKING SUMMARY */
+.booking-summary{
+    max-width:600px;
+    margin:25px auto;
+}
+
+.booking-summary h2{
+    color:var(--primary);
+    text-align:center;
+    margin-bottom:25px;
+}
+
+.summary-details{padding:10px}
+
+.summary-details p{
+    margin:15px 0;
+    font-size:16px;
+}
+
+.summary-details strong{color:var(--primary)}
+
+.summary-details hr{
+    border:0;
+    border-top:1px solid #ddd;
+    margin:20px 0;
+}
+
+.summary-details .total{
+    color:var(--accent);
+    font-size:20px;
+    text-align:right;
+}
+
+.summary-details button{
+    display:block;
+    margin:25px auto 5px;
+    background:var(--primary);
+}
+
+/* FOOTER */
+footer{
+    background:var(--primary);
+    color:white;
+    text-align:center;
+    padding:20px;
+    margin-top:40px;
+}
+
+/* TABLET */
+@media(max-width:900px){
+
+    header{
+        flex-direction:column;
+        gap:15px;
+    }
+
+    nav ul{gap:20px}
+
+    .booking-container{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .table-container{
+        width:90%;
+        overflow-x:auto;
+    }
+}
+
+/* MOBILE */
+@media(max-width:600px){
+
+    header{padding:20px}
+
+    header h1{font-size:28px}
+
+    /* MOBILE NAV */
+    nav{
+        padding:10px 12px;
+        background:linear-gradient(
+            135deg,
+            var(--primary),
+            var(--gradient-start)
+        );
+        box-shadow:0 4px 12px rgba(0,0,0,.25);
+    }
+
+    nav ul{
+        display:grid;
+        grid-template-columns:1fr 1fr;
+        gap:5px 10px;
+        max-width:400px;
+        margin:auto;
+    }
+
+    nav ul li{text-align:center}
+
+    nav ul li:last-child{
+        grid-column:1/3;
+    }
+
+    nav a{
+        display:block;
+        padding:9px 5px;
+        font-size:15px;
+        border-radius:5px;
+    }
+
+    nav a:hover{
+        background:rgba(255,107,0,.15);
+    }
+
+    /* MOBILE HERO */
+    main{
+        margin:175px 10px 25px;
+        padding:45px 15px;
+    }
+
+    main h2{font-size:27px}
+
+    main p{
+        font-size:16px;
+        line-height:1.5;
+    }
+
+    main button{
+        padding:12px 20px;
+        margin:6px;
+    }
+
+    /* MOBILE TEAMS */
+    body>h2{
+        margin:30px 0 18px;
+        font-size:24px;
+    }
+
+    body>ul{
+        width:90%;
+        grid-template-columns:1fr;
+        gap:10px;
+        margin-bottom:45px;
+    }
+
+    body>ul li{padding:14px}
+
+    /* MOBILE TABLE */
+    .table-container{
+        width:90%;
+        margin-bottom:35px;
+        overflow-x:auto;
+    }
+
+    table{min-width:700px}
+
+    /* MOBILE FILTER */
+    label[for="team"]{
+        width:90%;
+        margin:30px auto 10px;
+        font-size:16px;
+    }
+
+    #team{
+        width:90%;
+        max-width:230px;
+        margin:10px auto 45px;
+        padding:12px 15px;
+    }
+
+    /* MOBILE BOOKING */
+    .booking-container{
+        grid-template-columns:1fr;
+        width:90%;
+    }
+
+    form{
+        width:90%;
+        padding:20px;
+    }
+
+    /* MOBILE SUMMARY */
+    .booking-summary{
+        width:90%;
+        padding:20px;
+        margin:25px auto;
+    }
+
+    .booking-summary h2{font-size:22px}
+
+    .summary-details{padding:5px}
+
+    .summary-details p{
+        font-size:15px;
+        margin:13px 0;
+    }
+
+    .summary-details .total{font-size:18px}
+
+    .summary-details button{width:90%}
+
+    /* FOOTER */
+    footer{
+        font-size:14px;
+        padding:18px 10px;
+    }
+}

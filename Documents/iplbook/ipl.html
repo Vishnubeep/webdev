@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>IPL TICKET BOOKING</title>
+</head> 
+<body>
+    < -- using css -- >
+    <nav>
+      <ul>
+        <li><a class="home-pg-1" href="#">Home</a></li>
+        <li><a href="#">Matches</a></li>
+        <li><a href="#">Book Ticket</a></li>
+        <li><a href="#">My Bookings</a></li>
+        <li><a href="#">Guidelines</a></li>
+      </ul>
+    </nav>
+    <main>
+        <div>
+            <h2>Welcome to IPL Booking</h2>
+            <p>Book your tickets for the exciting IPL matches</p>
+            <button>Book Now</button>
+            <button>View Matches</button>
+        </div>
+    </main>
+    <h2>Popular Team</h2>
+    <ul>
+        <li>Chennai Super Kings</li>
+        <li>Mumbai Indians</li>
+        <li>Royal Challengers Bangalore</li>
+        <li>Kolkata Knight Riders</li>
+    </ul>
+    <table border="1">
+        <thead>
+            <tr>
+                <th rowspan="2">Match</th>
+                <th rowspan="2">Teams</th>
+                <th colspan="3">Ticket Prices</th>
+                <th rowspan="2">Action</th>
+            </tr>
+           
+            <tr>
+                <th>General</th>
+                <th>Premium</th> <th>VIP</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>01</td><td>CSK vs MI</td>
+                <td>1200</td><td>2500</td>
+                <td>5000</td>
+                <td><button>Book</button></td>   
+            </tr>
+            <tr>
+                <td>02</td><td>RR vs RCB</td>
+                <td>1500</td><td>3500</td>
+                <td>6000</td>
+                <td><button>Book</button></td>
+            </tr>
+            <tr>
+                <td>03</td><td>PBKS vs GT</td>
+                <td>1600</td><td>3000</td>
+                <td>7000</td>
+                <td><button>Book</button></td>    
+            </tr>
+        </tbody></table>
+        <label for="team">Filter:</label>
+        <select name="team" id="team">
+            <option value="all">All Teams</option>
+            <option value="csk">CSK</option>
+            <option value="mi">MI</option>
+            <option value="rcb">RCB</option>
+            <option value="rr">RR</option>
+            <option value="pbks">PBKS</option>
+        </select>
+
+        <form action="/book" method="post">
+            <input type="hidden"
+              name="match" value="01">
+            <button type="submit">Book</button>  
+        </form>
+        <form action="/confirm" method="post">
+            <label>Match:</label>
+            <select name="match">...</select>
+            <label>Stand Category:</label>
+            <input type="radio" name="stand" value="general"> General
+            <input type="radio" name="stand" value="premium"> Premium
+            <input type="radio" name="stand" value="vip"> VIP
+            </select>
+            <label>No. of Tickets:</label>
+            <input type="number" min="1">
+            <label>Name:</label>
+            <input type="text" required>
+            <label>Email:</label>
+            <input type="email" required>
+            <button type="submit">Confirm</button>
+        </form>
+    <footer>
+        <p> &copy; 2026 IPL Ticket Booking. All rights reserved. </p>
+    </footer>
+</body>
+</html>
