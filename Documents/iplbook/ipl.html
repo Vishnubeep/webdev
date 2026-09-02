@@ -7,7 +7,6 @@
     <title>IPL TICKET BOOKING</title>
 </head> 
 <body>
-    < -- using css -- >
     <nav>
       <ul>
         <li><a class="home-pg-1" href="#">Home</a></li>
@@ -66,15 +65,18 @@
                 <td><button>Book</button></td>    
             </tr>
         </tbody></table>
-        <label for="team">Filter:</label>
-        <select name="team" id="team">
-            <option value="all">All Teams</option>
-            <option value="csk">CSK</option>
-            <option value="mi">MI</option>
-            <option value="rcb">RCB</option>
-            <option value="rr">RR</option>
-            <option value="pbks">PBKS</option>
-        </select>
+
+        <div class="filter">
+            <label for="team">Filter:</label>
+            <select name="team" id="team">
+                <option value="all">All Teams</option>
+                <option value="csk">CSK</option>
+                <option value="mi">MI</option>
+                <option value="rcb">RCB</option>
+                <option value="rr">RR</option>
+                <option value="pbks">PBKS</option>
+            </select>
+        </div>
 
         <form action="/book" method="post">
             <input type="hidden"

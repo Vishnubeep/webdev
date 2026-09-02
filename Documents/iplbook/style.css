@@ -12,37 +12,20 @@
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:Arial,sans-serif;
 }
 
 body{
+    font-family:Arial,sans-serif;
     background:var(--background);
     color:var(--text);
+    line-height:1.6;
 }
 
-/* HEADER */
-header{
-    background:var(--primary);
-    color:white;
-    padding:25px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    text-align:center;
-}
-
-header h1{font-size:32px}
-
-/* NAVIGATION */
+/* NAVBAR */
 nav{
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    padding:15px;
     background:var(--primary);
-    z-index:1000;
-    box-shadow:0 3px 10px rgba(0,0,0,.2);
+    width:100%;
+    padding:15px 0;
 }
 
 nav ul{
@@ -50,105 +33,110 @@ nav ul{
     display:flex;
     justify-content:center;
     align-items:center;
-    gap:40px;
+    gap:35px;
+    margin:0;
+    padding:0;
+}
+
+nav li{
+    list-style:none;
 }
 
 nav a{
     color:white;
     text-decoration:none;
+    font-size:17px;
     font-weight:bold;
     transition:.3s;
 }
 
-nav a:hover{color:var(--accent)}
+nav a:hover{
+    color:var(--accent);
+}
 
 /* HERO */
 main{
-    max-width:1100px;
-    margin:20px auto 30px;
-    padding:60px 20px;
-    text-align:center;
-    color:rgb(254, 251, 251);
     background:linear-gradient(
         135deg,
         var(--gradient-start),
         var(--gradient-end)
     );
-    border-radius:15px;
-    box-shadow:0 5px 15px rgba(0,0,0,.2);
+    color:white;
+    text-align:center;
+    padding:70px 20px;
 }
 
 main h2{
-    font-size:34px;
-    margin-bottom:15px;
+    font-size:38px;
+    margin-bottom:10px;
 }
 
 main p{
     font-size:18px;
-    margin-bottom:20px;
+    margin-bottom:25px;
 }
 
-/* BUTTONS */
 button{
     background:var(--accent);
     color:white;
-    border:0;
-    padding:12px 25px;
-    margin:8px;
+    border:none;
+    padding:11px 22px;
     border-radius:6px;
     cursor:pointer;
     font-weight:bold;
+    font-size:14px;
     transition:.3s;
 }
 
 button:hover{
-    background:#e65100;
+    background:#e85f00;
     transform:translateY(-2px);
 }
 
-/* POPULAR TEAMS */
-body>h2{
-    text-align:center;
-    margin:35px 0 20px;
-    color:var(--primary);
+main button{
+    margin:5px;
 }
 
-body>ul{
-    width:500px;
-    max-width:90%;
-    margin:0 auto 55px;
+/* POPULAR TEAM */
+body > h2{
+    text-align:center;
+    color:var(--primary);
+    margin-top:45px;
+    margin-bottom:25px;
+}
+
+body > ul{
+    width:90%;
+    max-width:1100px;
+    margin:0 auto 45px;
     padding:0;
     list-style:none;
     display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:12px;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
 }
 
-body>ul li{
+body > ul li{
     background:white;
-    padding:16px;
+    padding:25px 15px;
     text-align:center;
-    border-radius:8px;
+    border-radius:10px;
+    box-shadow:0 4px 12px rgba(0,0,0,.1);
     font-weight:bold;
-    box-shadow:0 3px 8px rgba(0,0,0,.1);
+    color:var(--primary);
     transition:.3s;
 }
 
-body>ul li:hover{
-    transform:translateY(-3px);
-    box-shadow:0 5px 12px rgba(0,0,0,.15);
+body > ul li:hover{
+    transform:translateY(-5px);
+    box-shadow:0 7px 18px rgba(0,0,0,.15);
 }
 
-/* TABLE */
-.table-container{
-    width:90%;
-    margin:0 auto 45px;
-    overflow-x:auto;
-}
-
+/* MATCH TABLE */
 table{
-    width:100%;
-    min-width:700px;
+    width:90%;
+    max-width:1100px;
+    margin:0 auto 15px;
     border-collapse:collapse;
     background:white;
     box-shadow:0 4px 12px rgba(0,0,0,.15);
@@ -159,86 +147,61 @@ table{
 th{
     background:var(--primary);
     color:white;
-    padding:15px;
+    padding:14px;
+    text-align:center;
 }
 
 td{
-    padding:12px;
+    padding:13px;
     text-align:center;
-    border:1px solid #ddd;
+    border-bottom:1px solid #ddd;
 }
 
-tbody tr:hover{background:var(--light-blue)}
+tr:hover td{
+    background:var(--light-blue);
+}
+
+td button{
+    padding:8px 15px;
+}
 
 /* FILTER */
-label[for="team"]{
-    display:block;
-    width:230px;
-    margin:35px auto 10px;
-    text-align:center;
+.filter{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:6px;
+    margin:20px auto;
+}
+
+.filter label{
     font-weight:bold;
-    font-size:17px;
     color:var(--primary);
 }
 
-#team{
-    display:block;
-    width:230px;
-    margin:10px auto 45px;
-    padding:13px 18px;
+.filter select{
+    padding:8px 12px;
+    border:1px solid #bbb;
+    border-radius:6px;
     background:white;
-    color:var(--text);
-    border:2px solid var(--primary);
-    border-radius:7px;
-    font-size:15px;
     cursor:pointer;
-    box-shadow:0 3px 8px rgba(0,0,0,.1);
-    transition:.3s;
 }
 
-#team:hover,
-#team:focus{
-    border-color:var(--accent);
-}
-
-#team:focus{
-    outline:0;
-    box-shadow:0 0 6px rgba(255,107,0,.4);
-}
-
-/* BOOKING */
-.booking-container{
-    max-width:1100px;
-    width:90%;
-    margin:30px auto;
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:30px;
-}
-
-.booking-form,
-.booking-summary,
+/* BOOK FORM */
 form{
+    width:90%;
+    max-width:600px;
+    margin:30px auto;
+    padding:25px;
     background:white;
     border-radius:10px;
-    box-shadow:0 4px 12px rgba(0,0,0,.1);
-}
-
-.booking-form,
-.booking-summary{
-    padding:25px;
-}
-
-/* FORM */
-form{
-    max-width:600px;
-    margin:25px auto;
-    padding:25px;
+    box-shadow:0 4px 15px rgba(0,0,0,.1);
 }
 
 form label{
     display:block;
-    margin-top:10px;
+    margin-top:15px;
+    margin-bottom:6px;
     font-weight:bold;
     color:var(--primary);
 }
@@ -247,74 +210,41 @@ form input[type="text"],
 form input[type="email"],
 form input[type="number"],
 form select{
-    display:block;
     width:100%;
     padding:10px;
-    margin:8px 0 15px;
     border:1px solid #ccc;
-    border-radius:5px;
+    border-radius:6px;
+    font-size:14px;
 }
 
 form input:focus,
 form select:focus{
-    outline:0;
+    outline:none;
     border-color:var(--accent);
-    box-shadow:0 0 5px rgba(255,107,0,.3);
 }
 
+/* RADIO BUTTONS */
 form input[type="radio"]{
-    margin:10px 5px;
-    accent-color:var(--accent);
+    width:auto;
+    margin:8px 5px 8px 0;
 }
 
 form button{
-    display:block;
-    margin:20px auto 0;
-    background:var(--primary);
+    width:100%;
+    margin-top:20px;
 }
 
-form button:hover,
-.summary-details button:hover{
-    background:var(--gradient-end);
-}
-
-/* BOOKING SUMMARY */
-.booking-summary{
-    max-width:600px;
+/* FIRST BOOK FORM */
+form[action="/book"]{
+    max-width:375px;
+    padding:0;
+    background:none;
+    box-shadow:none;
     margin:25px auto;
 }
 
-.booking-summary h2{
-    color:var(--primary);
-    text-align:center;
-    margin-bottom:25px;
-}
-
-.summary-details{padding:10px}
-
-.summary-details p{
-    margin:15px 0;
-    font-size:16px;
-}
-
-.summary-details strong{color:var(--primary)}
-
-.summary-details hr{
-    border:0;
-    border-top:1px solid #ddd;
-    margin:20px 0;
-}
-
-.summary-details .total{
-    color:var(--accent);
-    font-size:20px;
-    text-align:right;
-}
-
-.summary-details button{
-    display:block;
-    margin:25px auto 5px;
-    background:var(--primary);
+form[action="/book"] button{
+    margin-top:0;
 }
 
 /* FOOTER */
@@ -322,163 +252,172 @@ footer{
     background:var(--primary);
     color:white;
     text-align:center;
-    padding:20px;
+    padding:25px 15px;
     margin-top:40px;
+}
+
+footer p{
+    margin:0;
 }
 
 /* TABLET */
 @media(max-width:900px){
 
-    header{
-        flex-direction:column;
-        gap:15px;
+    body > ul{
+        grid-template-columns:repeat(2,1fr);
     }
 
-    nav ul{gap:20px}
-
-    .booking-container{
-        grid-template-columns:1fr 1fr;
+    nav ul{
+        gap:25px;
     }
 
-    .table-container{
-        width:90%;
-        overflow-x:auto;
+    table{
+        width:95%;
     }
 }
 
 /* MOBILE */
 @media(max-width:600px){
 
-    header{padding:20px}
-
-    header h1{font-size:28px}
-
-    /* MOBILE NAV */
     nav{
-        padding:10px 12px;
-        background:linear-gradient(
-            135deg,
-            var(--primary),
-            var(--gradient-start)
-        );
-        box-shadow:0 4px 12px rgba(0,0,0,.25);
+        padding:12px 5px;
     }
 
     nav ul{
-        display:grid;
-        grid-template-columns:1fr 1fr;
-        gap:5px 10px;
-        max-width:400px;
-        margin:auto;
-    }
-
-    nav ul li{text-align:center}
-
-    nav ul li:last-child{
-        grid-column:1/3;
+        flex-wrap:wrap;
+        gap:10px 20px;
     }
 
     nav a{
-        display:block;
-        padding:9px 5px;
-        font-size:15px;
-        border-radius:5px;
+        font-size:14px;
     }
 
-    nav a:hover{
-        background:rgba(255,107,0,.15);
-    }
-
-    /* MOBILE HERO */
     main{
-        margin:175px 10px 25px;
         padding:45px 15px;
     }
 
-    main h2{font-size:27px}
+    main h2{
+        font-size:28px;
+    }
 
     main p{
-        font-size:16px;
-        line-height:1.5;
+        font-size:15px;
     }
 
     main button{
-        padding:12px 20px;
-        margin:6px;
+        padding:10px 16px;
     }
 
-    /* MOBILE TEAMS */
-    body>h2{
-        margin:30px 0 18px;
+    body > h2{
         font-size:24px;
+        margin-top:30px;
     }
 
-    body>ul{
-        width:90%;
-        grid-template-columns:1fr;
+    body > ul{
+        width:94%;
+        grid-template-columns:repeat(2,1fr);
         gap:10px;
-        margin-bottom:45px;
+        margin-bottom:30px;
     }
 
-    body>ul li{padding:14px}
-
-    /* MOBILE TABLE */
-    .table-container{
-        width:90%;
-        margin-bottom:35px;
-        overflow-x:auto;
+    body > ul li{
+        padding:17px 6px;
+        font-size:13px;
     }
 
-    table{min-width:700px}
-
-    /* MOBILE FILTER */
-    label[for="team"]{
-        width:90%;
-        margin:30px auto 10px;
-        font-size:16px;
+    /* MOBILE TABLE - NO SIDE SCROLL */
+    table{
+        width:96%;
+        min-width:0;
+        margin:0 auto 15px;
+        table-layout:fixed;
+        font-size:10px;
     }
 
-    #team{
-        width:90%;
-        max-width:230px;
-        margin:10px auto 45px;
-        padding:12px 15px;
+    th{
+        padding:8px 2px;
+        font-size:10px;
     }
 
-    /* MOBILE BOOKING */
-    .booking-container{
-        grid-template-columns:1fr;
-        width:90%;
+    td{
+        padding:8px 2px;
+        font-size:10px;
+        word-break:break-word;
+    }
+
+    td button{
+        padding:6px 7px;
+        font-size:9px;
+    }
+
+    /* CENTER FILTER */
+    .filter{
+        width:100%;
+        margin:20px auto;
+        justify-content:center;
+    }
+
+    .filter label{
+        font-size:13px;
+    }
+
+    .filter select{
+        padding:7px 9px;
+        font-size:12px;
     }
 
     form{
-        width:90%;
+        width:94%;
         padding:20px;
     }
 
-    /* MOBILE SUMMARY */
-    .booking-summary{
-        width:90%;
-        padding:20px;
-        margin:25px auto;
-    }
-
-    .booking-summary h2{font-size:22px}
-
-    .summary-details{padding:5px}
-
-    .summary-details p{
-        font-size:15px;
-        margin:13px 0;
-    }
-
-    .summary-details .total{font-size:18px}
-
-    .summary-details button{width:90%}
-
-    /* FOOTER */
     footer{
-        font-size:14px;
-        padding:18px 10px;
+        font-size:13px;
+    }
+}
+
+/* SMALL PHONES */
+@media(max-width:380px){
+
+    nav ul{
+        gap:8px 13px;
+    }
+
+    nav a{
+        font-size:13px;
+    }
+
+    main h2{
+        font-size:24px;
+    }
+
+    body > ul li{
+        font-size:12px;
+        padding:14px 4px;
+    }
+
+    table{
+        width:98%;
+        font-size:9px;
+    }
+
+    th,
+    td{
+        padding:6px 1px;
+        font-size:9px;
+    }
+
+    td button{
+        padding:5px;
+        font-size:8px;
+    }
+
+    .filter label{
+        font-size:12px;
+    }
+
+    .filter select{
+        font-size:11px;
+        padding:6px 8px;
     }
 }
