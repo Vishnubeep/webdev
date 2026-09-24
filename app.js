@@ -40,3 +40,9 @@ if (confirmButton) {
         showToast("Booking confirmed successfully!");
     });
 }
+
+document.addEventListener("DOMContentLoaded", function() {
+    const demo = document.getElementById("demo");
+
+    demo.textContent = "IPL 2026 features exciting cricket matches between the top teams of the Indian Premier League. Fans can enjoy thrilling matches and book tickets to watch their favourite teams live.";
+});
