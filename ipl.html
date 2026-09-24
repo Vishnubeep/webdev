@@ -1,479 +1,242 @@
 <!DOCTYPE html>
-
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <link rel="stylesheet" href="style.css">
-
     <title>IPL Ticket Booking</title>
-
 </head>
 
 <body>
 
 <nav>
-
     <ul>
-
         <li><a href="#" class="home-pg-1">Home</a></li>
         <li><a href="#matches">Matches</a></li>
         <li><a href="#stadiums">Stadiums</a></li>
         <li><a href="#booking">Book Ticket</a></li>
         <li><a href="#summary">My Bookings</a></li>
         <li><a href="#guidelines">Guidelines</a></li>
-
     </ul>
-
 </nav>
 
 <main>
-
     <div>
-
         <h2>Welcome to IPL Booking</h2>
-
         <p>Book your tickets for the exciting IPL matches</p>
-
-        <button onclick="location.href='#booking'">
-            Book Now
-        </button>
-
-        <button onclick="location.href='#matches'">
-            View Matches
-        </button>
-
+        <button onclick="location.href='#booking'">Book Now</button>
+        <button onclick="location.href='#matches'">View Matches</button>
     </div>
-
 </main>
 
 <section class="stadiums" id="stadiums">
-
     <h2>IPL Stadiums</h2>
 
     <div class="stadium-grid">
-
         <div class="stadium-card">
-
             <h3>M. Chinnaswamy Stadium</h3>
-
             <p>Bengaluru, Karnataka</p>
-
         </div>
 
         <div class="stadium-card">
-
             <h3>Wankhede Stadium</h3>
-
             <p>Mumbai, Maharashtra</p>
-
         </div>
 
         <div class="stadium-card">
-
             <h3>M. A. Chidambaram Stadium</h3>
-
             <p>Chennai, Tamil Nadu</p>
-
         </div>
 
         <div class="stadium-card">
-
             <h3>Eden Gardens</h3>
-
             <p>Kolkata, West Bengal</p>
-
         </div>
 
         <div class="stadium-card">
-
             <h3>Sawai Mansingh Stadium</h3>
-
             <p>Jaipur, Rajasthan</p>
-
         </div>
 
         <div class="stadium-card">
-
             <h3>Narendra Modi Stadium</h3>
-
             <p>Ahmedabad, Gujarat</p>
-
         </div>
-
     </div>
-
 </section>
 
 <h2>Popular Teams</h2>
 
 <ul>
-
     <li>Chennai Super Kings</li>
     <li>Mumbai Indians</li>
     <li>Royal Challengers Bangalore</li>
     <li>Kolkata Knight Riders</li>
-
 </ul>
 
 <section id="matches">
-
     <h2>Available Matches</h2>
 
     <div class="table-container">
-
         <table>
-
             <thead>
-
                 <tr>
-
                     <th rowspan="2">Match</th>
                     <th rowspan="2">Teams</th>
                     <th rowspan="2">Stadium</th>
                     <th colspan="3">Ticket Prices</th>
                     <th rowspan="2">Action</th>
-
                 </tr>
-
                 <tr>
-
                     <th>General</th>
                     <th>Premium</th>
                     <th>VIP</th>
-
                 </tr>
-
             </thead>
 
             <tbody>
-
                 <tr>
-
                     <td>01</td>
                     <td>CSK vs MI</td>
                     <td>M. A. Chidambaram Stadium</td>
                     <td>₹1200</td>
                     <td>₹2500</td>
                     <td>₹5000</td>
-
-                    <td>
-                        <button class="book-btn">
-                            Book
-                        </button>
-                    </td>
-
+                    <td><button class="book-btn">Book</button></td>
                 </tr>
 
                 <tr>
-
                     <td>02</td>
                     <td>RR vs RCB</td>
                     <td>Sawai Mansingh Stadium</td>
                     <td>₹1500</td>
                     <td>₹3500</td>
                     <td>₹6000</td>
-
-                    <td>
-                        <button class="book-btn">
-                            Book
-                        </button>
-                    </td>
-
+                    <td><button class="book-btn">Book</button></td>
                 </tr>
 
                 <tr>
-
                     <td>03</td>
                     <td>PBKS vs GT</td>
                     <td>Narendra Modi Stadium</td>
                     <td>₹1600</td>
                     <td>₹3000</td>
                     <td>₹7000</td>
-
-                    <td>
-                        <button class="book-btn">
-                            Book
-                        </button>
-                    </td>
-
+                    <td><button class="book-btn">Book</button></td>
                 </tr>
-
             </tbody>
-
         </table>
-
     </div>
-
 </section>
 
 <div class="filter">
-
     <label for="team">Filter:</label>
-
     <select name="team" id="team">
-
         <option value="all">All Teams</option>
         <option value="csk">CSK</option>
         <option value="mi">MI</option>
         <option value="rcb">RCB</option>
         <option value="rr">RR</option>
         <option value="pbks">PBKS</option>
-
     </select>
-
 </div>
 
 <section class="booking-container" id="booking">
-
-    <form action="/book" method="post">
-
+    <form id="bookingForm">
         <h2>Book Your Ticket</h2>
-
         <p>Select your match and proceed to booking.</p>
-
         <input type="hidden" name="match" value="01">
-
-        <button type="submit">
-            Book Now
-        </button>
-
+        <button type="button" id="bookingButton">Book Now</button>
     </form>
 
     <section class="booking-summary" id="summary">
-
         <h2>Booking Summary</h2>
-
-        <p>
-            <strong>Match:</strong>
-            CSK vs MI
-        </p>
-
-        <p>
-            <strong>Stadium:</strong>
-            M. A. Chidambaram Stadium
-        </p>
-
-        <p>
-            <strong>Stand:</strong>
-            General
-        </p>
-
-        <p>
-            <strong>Tickets:</strong>
-            2
-        </p>
-
-        <p>
-            <strong>Total:</strong>
-            ₹2400
-        </p>
-
+        <p><strong>Match:</strong> CSK vs MI</p>
+        <p><strong>Stadium:</strong> M. A. Chidambaram Stadium</p>
+        <p><strong>Stand:</strong> General</p>
+        <p><strong>Tickets:</strong> 2</p>
+        <p><strong>Total:</strong> ₹2400</p>
     </section>
-
 </section>
 
-<form action="/confirm" method="post" class="confirm-form">
-
+<form class="confirm-form" id="confirmForm">
     <h2>Confirm Your Booking</h2>
 
-    <label for="match">
-        Match:
-    </label>
-
+    <label for="match">Match:</label>
     <select name="match" id="match" required>
-
-        <option value="">
-            Select Match
-        </option>
-
-        <option value="csk-mi">
-            CSK vs MI
-        </option>
-
-        <option value="rr-rcb">
-            RR vs RCB
-        </option>
-
-        <option value="pbks-gt">
-            PBKS vs GT
-        </option>
-
+        <option value="">Select Match</option>
+        <option value="csk-mi">CSK vs MI</option>
+        <option value="rr-rcb">RR vs RCB</option>
+        <option value="pbks-gt">PBKS vs GT</option>
     </select>
 
-    <label>
-        Stand Category:
-    </label>
+    <label>Stand Category:</label>
 
     <div class="radio-group">
-
         <label>
-
-            <input
-                type="radio"
-                name="stand"
-                value="general"
-                required
-            >
-
+            <input type="radio" name="stand" value="general" required>
             General
-
         </label>
 
         <label>
-
-            <input
-                type="radio"
-                name="stand"
-                value="premium"
-            >
-
+            <input type="radio" name="stand" value="premium">
             Premium
-
         </label>
 
         <label>
-
-            <input
-                type="radio"
-                name="stand"
-                value="vip"
-            >
-
+            <input type="radio" name="stand" value="vip">
             VIP
-
         </label>
-
     </div>
 
-    <label for="tickets">
-        No. of Tickets:
-    </label>
+    <label for="tickets">No. of Tickets:</label>
+    <input type="number" id="tickets" name="tickets" min="1" max="10" required>
 
-    <input
-        type="number"
-        id="tickets"
-        name="tickets"
-        min="1"
-        max="10"
-        required
-    >
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" placeholder="Enter your name" required>
 
-    <label for="name">
-        Name:
-    </label>
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" placeholder="Enter your email" required>
 
-    <input
-        type="text"
-        id="name"
-        name="name"
-        placeholder="Enter your name"
-        required
-    >
-
-    <label for="email">
-        Email:
-    </label>
-
-    <input
-        type="email"
-        id="email"
-        name="email"
-        placeholder="Enter your email"
-        required
-    >
-
-    <label for="idproof">
-        ID Proof:
-    </label>
-
+    <label for="idproof">ID Proof:</label>
     <select name="idproof" id="idproof" required>
-
-        <option value="">
-            Select ID Proof
-        </option>
-
-        <option value="aadhaar">
-            Aadhaar Card
-        </option>
-
-        <option value="driving-license">
-            Driving Licence
-        </option>
-
-        <option value="passport">
-            Passport
-        </option>
-
-        <option value="voter-id">
-            Voter ID
-        </option>
-
+        <option value="">Select ID Proof</option>
+        <option value="aadhaar">Aadhaar Card</option>
+        <option value="driving-license">Driving Licence</option>
+        <option value="passport">Passport</option>
+        <option value="voter-id">Voter ID</option>
     </select>
 
-    <button type="submit">
-        Confirm Booking
-    </button>
-
+    <button type="button" id="confirmButton">Confirm Booking</button>
 </form>
 
 <section class="guidelines" id="guidelines">
-
     <h2>Booking Guidelines</h2>
 
     <div class="guidelines-grid">
-
         <div class="guideline-card">
-
             <h3>Ticket Verification</h3>
-
-            <p>
-                Carry your valid booking confirmation and ticket while
-                entering the stadium. Tickets may be scanned and verified
-                at the entrance.
-            </p>
-
+            <p>Carry your valid booking confirmation and ticket while entering the stadium. Tickets may be scanned and verified at the entrance.</p>
         </div>
 
         <div class="guideline-card">
-
             <h3>ID Proof Required</h3>
-
-            <p>
-                Carry a valid government-issued photo ID such as Aadhaar
-                Card, Driving Licence, Passport or Voter ID.
-            </p>
-
+            <p>Carry a valid government-issued photo ID such as Aadhaar Card, Driving Licence, Passport or Voter ID.</p>
         </div>
 
         <div class="guideline-card">
-
             <h3>Digital Ticket</h3>
-
-            <p>
-                Keep your e-ticket or booking confirmation available on
-                your mobile phone for verification at the stadium.
-            </p>
-
+            <p>Keep your e-ticket or booking confirmation available on your mobile phone for verification at the stadium.</p>
         </div>
-
     </div>
-
 </section>
 
 <footer>
-
-    <p>
-        &copy; 2026 IPL Ticket Booking. All rights reserved.
-    </p>
-
+    <p>&copy; 2026 IPL Ticket Booking. All rights reserved.</p>
 </footer>
 
 <script src="app.js"></script>
 
 </body>
-
 </html>
