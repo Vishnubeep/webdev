@@ -1,0 +1,689 @@
+:root{
+    --primary:#2563eb;
+    --accent:#ff6b00;
+    --background:#f7fbf8;
+    --text:#1a1b1a;
+    --light-blue:#f6f9f6;
+    --gradient-start:#1e3a8a;
+    --gradient-end:#2563eb;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial,sans-serif;
+    background:var(--background);
+    color:var(--text);
+    line-height:1.6;
+}
+
+nav{
+    background:var(--primary);
+    width:100%;
+    padding:15px 0;
+}
+
+nav ul{
+    list-style:none;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:30px;
+    margin:0;
+    padding:0;
+}
+
+nav li{
+    list-style:none;
+}
+
+nav a{
+    color:rgb(247,255,246);
+    text-decoration:none;
+    font-size:16px;
+    font-weight:bold;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:var(--accent);
+}
+
+main{
+    background:linear-gradient(135deg,var(--gradient-start),var(--gradient-end));
+    color:rgb(230,233,230);
+    text-align:center;
+    padding:70px 20px;
+}
+
+main h2{
+    font-size:38px;
+    margin-bottom:10px;
+}
+
+main p{
+    font-size:18px;
+    margin-bottom:25px;
+}
+
+button{
+    background:var(--accent);
+    color:rgb(253,255,252);
+    border:none;
+    padding:11px 22px;
+    border-radius:6px;
+    cursor:pointer;
+    font-weight:bold;
+    font-size:14px;
+    transition:.3s;
+}
+
+button:hover{
+    background:#e85f00;
+    transform:translateY(-2px);
+}
+
+main button{
+    margin:5px;
+}
+
+.stadiums{
+    width:90%;
+    max-width:1100px;
+    margin:45px auto;
+}
+
+.stadiums > h2{
+    text-align:center;
+    color:var(--primary);
+    font-size:30px;
+    margin-bottom:25px;
+}
+
+.stadium-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.stadium-card{
+    background:white;
+    padding:25px 20px;
+    text-align:center;
+    border-radius:12px;
+    box-shadow:0 4px 15px rgba(0,0,0,.1);
+    transition:.3s;
+}
+
+.stadium-card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 7px 18px rgba(0,0,0,.15);
+}
+
+.stadium-card h3{
+    color:var(--primary);
+    font-size:18px;
+    margin-bottom:8px;
+}
+
+.stadium-card p{
+    color:#666;
+    font-size:14px;
+}
+
+.about-ipl{
+    width:90%;
+    max-width:1100px;
+    margin:45px auto;
+    text-align:center;
+}
+
+.about-ipl h2{
+    color:var(--primary);
+    font-size:30px;
+    margin-bottom:15px;
+}
+
+.about-ipl p{
+    font-size:18px;
+    line-height:1.6;
+    color:#555;
+}
+
+body > h2{
+    text-align:center;
+    color:var(--primary);
+    margin-top:45px;
+    margin-bottom:25px;
+}
+
+body > ul{
+    width:90%;
+    max-width:1100px;
+    margin:0 auto 45px;
+    padding:0;
+    list-style:none;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+}
+
+body > ul li{
+    background:rgb(239,241,240);
+    padding:25px 15px;
+    text-align:center;
+    border-radius:10px;
+    box-shadow:0 4px 12px rgba(0,0,0,.1);
+    font-weight:bold;
+    color:var(--primary);
+    transition:.3s;
+}
+
+body > ul li:hover{
+    transform:translateY(-5px);
+    box-shadow:0 7px 18px rgba(0,0,0,.15);
+}
+
+#matches{
+    width:100%;
+}
+
+#matches > h2{
+    text-align:center;
+    color:var(--primary);
+    margin-bottom:25px;
+}
+
+.table-container{
+    width:90%;
+    max-width:1100px;
+    margin:0 auto;
+    overflow-x:auto;
+}
+
+table{
+    width:100%;
+    min-width:850px;
+    border-collapse:collapse;
+    background:white;
+    box-shadow:0 4px 12px rgba(0,0,0,.15);
+    border-radius:8px;
+    overflow:hidden;
+}
+
+th{
+    background:var(--primary);
+    color:rgb(26,225,53);
+    padding:14px;
+    text-align:center;
+}
+
+td{
+    padding:13px;
+    text-align:center;
+    border-bottom:1px solid #ddd;
+}
+
+tr:hover td{
+    background:var(--light-blue);
+}
+
+td button{
+    padding:8px 15px;
+}
+
+.filter{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:8px;
+    margin:25px auto;
+}
+
+.filter label{
+    font-weight:bold;
+    color:var(--primary);
+}
+
+.filter select{
+    padding:8px 12px;
+    border:1px solid #bbb;
+    border-radius:6px;
+    background:white;
+    cursor:pointer;
+}
+
+.booking-container{
+    width:90%;
+    max-width:1000px;
+    margin:35px auto;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:25px;
+    align-items:start;
+}
+
+.booking-container form{
+    width:100%;
+    margin:0;
+    padding:30px;
+    background:white;
+    border-radius:12px;
+    box-shadow:0 4px 15px rgba(0,0,0,.1);
+}
+
+.booking-container form h2{
+    color:var(--primary);
+    margin-bottom:10px;
+    font-size:28px;
+}
+
+.booking-container form p{
+    color:#555;
+    margin-bottom:20px;
+}
+
+.booking-container form button{
+    width:100%;
+    margin-top:10px;
+    padding:14px;
+    font-size:16px;
+}
+
+.booking-summary{
+    background:white;
+    padding:30px;
+    border-radius:12px;
+    box-shadow:0 4px 15px rgba(0,0,0,.1);
+}
+
+.booking-summary h2{
+    color:var(--primary);
+    margin-bottom:25px;
+    font-size:30px;
+}
+
+.booking-summary p{
+    margin:16px 0;
+    font-size:17px;
+}
+
+.booking-summary strong{
+    color:#111;
+}
+
+.confirm-form{
+    width:90%;
+    max-width:600px;
+    margin:35px auto;
+    padding:30px;
+    background:white;
+    border-radius:12px;
+    box-shadow:0 4px 15px rgba(0,0,0,.1);
+}
+
+.confirm-form h2{
+    text-align:center;
+    color:var(--primary);
+    margin-bottom:20px;
+}
+
+form label{
+    display:block;
+    margin-top:15px;
+    margin-bottom:6px;
+    font-weight:bold;
+    color:var(--primary);
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="number"],
+form select{
+    width:100%;
+    padding:10px;
+    border:1px solid #ccc;
+    border-radius:6px;
+    font-size:14px;
+    background:white;
+}
+
+form input:focus,
+form select:focus{
+    outline:none;
+    border-color:var(--accent);
+}
+
+.radio-group{
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+    margin-top:5px;
+}
+
+.radio-group label{
+    display:flex;
+    align-items:center;
+    gap:5px;
+    margin:0;
+    font-weight:normal;
+    color:#333;
+}
+
+.radio-group input[type="radio"]{
+    width:auto;
+    margin:0;
+}
+
+.confirm-form button{
+    width:100%;
+    margin-top:25px;
+    padding:13px;
+    font-size:16px;
+}
+
+.guidelines{
+    width:90%;
+    max-width:1100px;
+    margin:55px auto;
+}
+
+.guidelines > h2{
+    text-align:center;
+    color:var(--primary);
+    font-size:30px;
+    margin-bottom:30px;
+}
+
+.guidelines-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.guideline-card{
+    background:white;
+    padding:25px;
+    border-radius:12px;
+    box-shadow:0 4px 15px rgba(0,0,0,.1);
+    transition:.3s;
+}
+
+.guideline-card:hover{
+    transform:translateY(-4px);
+    box-shadow:0 7px 18px rgba(0,0,0,.15);
+}
+
+.guideline-card h3{
+    color:var(--primary);
+    font-size:19px;
+    margin-bottom:12px;
+}
+
+.guideline-card p{
+    color:#555;
+    font-size:14px;
+    line-height:1.7;
+}
+
+footer{
+    background:var(--primary);
+    color:white;
+    text-align:center;
+    padding:25px 15px;
+    margin-top:40px;
+}
+
+footer p{
+    margin:0;
+}
+
+@media(max-width:900px){
+
+    nav ul{
+        gap:20px;
+    }
+
+    body > ul{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .stadium-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .booking-container{
+        grid-template-columns:1fr;
+    }
+
+    .guidelines-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+}
+
+@media(max-width:600px){
+
+    nav{
+        padding:12px 5px;
+    }
+
+    nav ul{
+        flex-direction:column;
+        gap:10px;
+    }
+
+    nav a{
+        font-size:14px;
+    }
+
+    main{
+        padding:45px 15px;
+    }
+
+    main h2{
+        font-size:28px;
+    }
+
+    main p{
+        font-size:15px;
+    }
+
+    main button{
+        padding:10px 16px;
+    }
+
+    .stadiums{
+        width:94%;
+        margin:35px auto;
+    }
+
+    .stadiums > h2{
+        font-size:24px;
+    }
+
+    .stadium-grid{
+        grid-template-columns:1fr;
+        gap:15px;
+    }
+
+    .stadium-card{
+        padding:20px;
+    }
+
+    .stadium-card h3{
+        font-size:17px;
+    }
+
+    .about-ipl{
+        width:94%;
+        margin:35px auto;
+    }
+
+    .about-ipl h2{
+        font-size:24px;
+    }
+
+    .about-ipl p{
+        font-size:15px;
+    }
+
+    body > h2{
+        font-size:24px;
+        margin-top:30px;
+    }
+
+    body > ul{
+        width:94%;
+        grid-template-columns:repeat(2,1fr);
+        gap:10px;
+        margin-bottom:30px;
+    }
+
+    body > ul li{
+        padding:17px 6px;
+        font-size:13px;
+    }
+
+    .table-container{
+        width:96%;
+        overflow-x:auto;
+    }
+
+    table{
+        min-width:850px;
+    }
+
+    .filter{
+        width:100%;
+        margin:20px auto;
+        justify-content:center;
+    }
+
+    .filter label{
+        font-size:13px;
+    }
+
+    .filter select{
+        padding:7px 9px;
+        font-size:12px;
+    }
+
+    .booking-container{
+        width:94%;
+        grid-template-columns:1fr;
+        gap:20px;
+    }
+
+    .booking-container form{
+        width:100%;
+        padding:22px;
+    }
+
+    .booking-container form h2{
+        font-size:24px;
+    }
+
+    .booking-summary{
+        width:100%;
+        padding:22px;
+    }
+
+    .booking-summary h2{
+        font-size:24px;
+    }
+
+    .booking-summary p{
+        font-size:15px;
+    }
+
+    .confirm-form{
+        width:94%;
+        padding:20px;
+    }
+
+    .radio-group{
+        gap:12px;
+    }
+
+    .guidelines{
+        width:94%;
+        margin:40px auto;
+    }
+
+    .guidelines > h2{
+        font-size:24px;
+    }
+
+    .guidelines-grid{
+        grid-template-columns:1fr;
+        gap:15px;
+    }
+
+    .guideline-card{
+        padding:20px;
+    }
+
+    .guideline-card h3{
+        font-size:17px;
+    }
+
+    .guideline-card p{
+        font-size:13px;
+    }
+
+    footer{
+        font-size:13px;
+    }
+}
+
+@media(max-width:380px){
+
+    nav ul{
+        gap:8px;
+    }
+
+    nav a{
+        font-size:13px;
+    }
+
+    main h2{
+        font-size:24px;
+    }
+
+    body > ul li{
+        font-size:12px;
+        padding:14px 4px;
+    }
+
+    table{
+        min-width:850px;
+    }
+
+    th,
+    td{
+        padding:7px 5px;
+        font-size:10px;
+    }
+
+    td button{
+        padding:5px 7px;
+        font-size:9px;
+    }
+
+    .filter label{
+        font-size:12px;
+    }
+
+    .filter select{
+        font-size:11px;
+        padding:6px 8px;
+    }
+}
